@@ -18,7 +18,7 @@ let documents = [{
     },
 ];
 
-var idx = lunr(function () {
+var index = lunr(function () {
     this.ref('name')
     this.field('text')
 
@@ -27,6 +27,6 @@ var idx = lunr(function () {
     }, this)
 })
 
-idx.search("bright")
+index.search("bright")
 
 console.log(documents)
