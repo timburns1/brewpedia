@@ -4,4 +4,4 @@ $_USERNAME = "";
 $password = "";
 $dbname = "";
 
-$conn = mysql
+$conn = mysqli_connect($server)
