@@ -25,7 +25,8 @@
   "dependencies": {
     "lunr": "^2.3.8",
     "make": "^0.8.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
