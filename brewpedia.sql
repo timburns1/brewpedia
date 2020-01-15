@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS brewpediaapi;
+
 CREATE database brewpediaapi;
 
 USE brewpediaapi;
@@ -10,10 +12,10 @@ CREATE TABLE volume(
 	beer_color VARCHAR(10) NOT NULL,
     beer_ibu VARCHAR(5) NOT NULL,
     beer_abv VARCHAR(5) NOT NULL,
-    beer_nose VARCHAR(65535) NOT NULL,
-    beer_flavor VARCHAR(65535) NOT NULL,
-    beer_mouth VARCHAR(65535) NOT NULL,
-    beer_finish VARCHAR(65535) NOT NULL,
+    beer_nose BLOB(1000) NOT NULL,
+    beer_flavor BLOB(1000) NOT NULL,
+    beer_mouth BLOB(1000) NOT NULL,
+    beer_finish BLOB(1000) NOT NULL,
 	PRIMARY KEY (item_id)
 );
 
