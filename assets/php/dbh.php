@@ -1,7 +1,7 @@
 <?php
-$server = "localhost";
-$USERNAME = "root";
-$password = "Alexmac34";
-$dbname = "brewpediaapi";
+// $server = "localhost";
+// $USERNAME = "root";
+// $password = "Alexmac34";
+// $dbname = "brewpediaapi";
 
-$conn = mysqli_connect($server,$USERNAME,$password,$dbname);
+// $conn = mysqli_connect($server,$USERNAME,$password,$dbname);
