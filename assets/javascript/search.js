@@ -1,5 +1,13 @@
 var mysql = require("mysql");
-var inquirer = require("inquirer")
+var inquirer = require("inquirer");
+var express = require("express");
+var app = express();
+
+app.get('/', function (req, res) {
+    res.send('hello world!')
+})
+
+app.listen(3306)
 
 var connection = mysql.createConnection({
     host: "localhost",
