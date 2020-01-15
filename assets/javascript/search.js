@@ -3,11 +3,11 @@ var inquirer = require("inquirer");
 var express = require("express");
 var app = express();
 
-app.get('/', function (req, res) {
-    res.send('hello world!')
-})
+// app.get('/', function (req, res) {
+//     res.send('hello world!')
+// })
 
-app.listen(3306)
+// app.listen(3306)
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -37,4 +37,12 @@ function afterConnection() {
         console.log(res);
         connection.end();
     });
+}
+
+var makeTable = function () {
+    connection.query("SELECT * FROM volume", function (err, res) {
+        for (var i = 0; i < res.lenght; i++) {
+            console.log(res[i].item_id + " || " + res[i].beer_style + " || " + res[i].beer_brewery + " || " + res[i].beer_name + " ||" + )
+        }
+    })
 }
