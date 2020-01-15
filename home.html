@@ -17,6 +17,18 @@
         <h1><span>Brewpedia</span></h1>
     </div>
 
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="navbar">
+        <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+        <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>
+
+    <!--------------------------------------------------------->
+
     <div class="container">
         <div class="row">
             <form action="../brewpedia/search.html" method="get">
@@ -27,16 +39,21 @@
         </div>
     </div>
 
-
-    <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
+    <!-------------------------dropdown---------------------->
+    <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </div>
 
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+    </script>
+
+
+    <!----------------------------------------------------------------->
     <section>
         <div class="imageLeft">
             <img src="assets/images/headerPic.jpg" alt="4beers">
