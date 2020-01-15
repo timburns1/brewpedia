@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/timburns1/brewpedia#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "inquirer": "^7.0.3",
     "lunr": "^2.3.8",
     "make": "^0.8.1",
