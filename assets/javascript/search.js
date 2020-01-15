@@ -1,32 +1,24 @@
-var lunr = require('lunr');
+var mysql = require("mysql");
+var inquirer = require("inquirer")
 
-let documents = [{
-        "name": "Lunr",
-        "text": "Like Solr but much smaller and not as bright",
-    },
-    {
-        "name": "React",
-        "text": "A JavaScript library for building user interfaces,"
-    },
-    {
-        "name": "lodash",
-        "text": "A modern JavaScipt utility library delivering modularity, performance, and extras"
-    },
-    {
-        "name": "Bud Light",
-        "text": "Taste like piss"
-    },
-];
+var connection = mysql.createConnection({
+    host: "localhost",
 
-var index = lunr(function () {
-    this.ref('name')
-    this.field('text')
+    // Your port
+    port: 3306,
 
-    documents.forEach(function (doc) {
-        this.add(doc)
-    }, this)
-})
+    // Your username
+    user: "root",
 
-index.search("bright")
+    // Your password
+    password: "Alexmac34",
+    database: "brewpediaapi"
+});
 
-console.log(documents)
+//connection
+
+connection.connect(function (err) {
+    if (err) throw err;
+    console.log("connected as id " + connection.threadId);
+    connection.end();
+});
