@@ -1,15 +1,9 @@
-var mysql = require("mysql");
-var inquirer = require("inquirer");
-var express = require("express");
-var app = express();
+const mysql = require("mysql");
+const inquirer = require("inquirer");
+const express = require("express");
+const app = express();
 
-// app.get('/', function (req, res) {
-//     res.send('hello world!')
-// })
-
-// app.listen(3306)
-
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
     host: "localhost",
 
     // Your port
@@ -23,26 +17,57 @@ var connection = mysql.createConnection({
     database: "brewpediaapi"
 });
 
-//connection
-
 connection.connect(function (err) {
     if (err) throw err;
-    console.log("connected as id " + connection.threadId);
-    afterConnection();
-});
+    runSearch();
+})
 
-function afterConnection() {
-    connection.query("SELECT * FROM volume", function (err, res) {
-        if (err) throw err;
-        console.log(res);
-        connection.end();
+var runSearch = function () {
+    console.log("Connection successful!");
+    inquirer.prompt({
+        name: "action",
+        type: "rawlist",
+        message: "What would you like to do?",
+        choices: [
+            "Find beer by name",
+            "Find beer by style",
+            "Find beer by brewery",
+        ]
+    }).then(function (answer) {
+        switch (answer) {
+            case "Find beer by name":
+                nameSearch();
+                break;
+
+            case "Find beer by style":
+                styleSearch();
+                break;
+
+            case "Find beer by brewery":
+                brewerySearch();
+                break;
+        }
+
     });
 }
 
-var makeTable = function () {
-    connection.query("SELECT * FROM volume", function (err, res) {
-        for (var i = 0; i < res.lenght; i++) {
-            console.log(res[i].item_id + " || " + res[i].beer_style + " || " + res[i].beer_brewery + " || " + res[i].beer_name + " ||" + )
-        }
-    })
+function nameSearch() {
+    inquirer
+        .prompt({
+            name: "beer_name",
+            type: "input",
+            message: "What beer would you like to search for?"
+        })
+        .then(function (answer) {
+            var query = "SELECT beer_name, beer_style, beer_brewery FROM volume WHERE ?";
+            connection.query(query, {
+                beer_name: answer.beer_name
+            }, function (err, res) {
+                if (err) throw err;
+                for (var i = 0; i < res.length; i++) {
+                    console.log("Beer NAme: " + res[i].beer_name + " || Beer Style: " + res[i].beer_style + " || Brewery: " + res[i].beer_brewery);
+                }
+                runSearch();
+            });
+        });
 }
