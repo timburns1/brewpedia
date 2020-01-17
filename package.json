@@ -4,7 +4,7 @@
   "description": "wikipedia for beers",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon server/server.js -w server"
   },
   "repository": {
     "type": "git",
@@ -23,13 +23,20 @@
   },
   "homepage": "https://github.com/timburns1/brewpedia#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "fs": "0.0.1-security",
     "inquirer": "^7.0.3",
     "lunr": "^2.3.8",
     "make": "^0.8.1",
+    "method-override": "^3.0.0",
     "mysql": "^2.17.1",
+    "mysql2": "^2.1.0",
     "nodemon": "^2.0.2",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "path": "^0.12.7",
+    "sequelize": "^5.21.3"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",

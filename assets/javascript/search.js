@@ -1,3 +1,37 @@
+// Dependencies
+// =============================================================
+// Sequelize (capital) references the standard library
+var Sequelize = require("sequelize");
+// sequelize (lowercase) references our connection to the DB.
+var sequelize = require("../javascript/connection");
+// Creates a "beer" model that matches up with DB
+var volume = sequelize.define("beer", {
+    // the routeName gets saved as a string
+    routeName: Sequelize.STRING,
+    // the name of the beer (a string)
+    beer_name: Sequelize.STRING,
+    // the brewer (a string)
+    beer_brewery: Sequelize.STRING,
+    // the beer style (a string)
+    beer_style: Sequelize.INTEGER,
+
+    // the beer ABV (an int)
+    beer_abv: Sequelize.INTEGER
+}, {
+    // disable the modification of tablenames; By default, sequelize will automatically
+    // transform all passed model names (first parameter of define) into plural.
+    // if you don't want that, set the following
+    freezeTableName: true
+});
+// Syncs with DB
+volume.sync();
+
+module.exports = volume;
+
+
+
+
+
 // const mysql = require("mysql");
 // const inquirer = require("inquirer");
 // const express = require("express");
