@@ -11,6 +11,49 @@
     <title>Brewpedia</title>
 </head>
 
+<body>
 
+    <div class="welcome">
+        <h1>Brewpedia</h1>
+    </div>
+
+    <!-- Load an icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="navbar">
+    
+  <a class="active" href="home.html"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  <a href="login.html"><i class="fa fa-fw fa-user"></i> Login</a>
+  <a class="active" href="results.html"><i class="fa fa-fw fa-home"></i> Home</a>  
+
+  
+  <!----------------------------------------->
+  <!--Search Bar-->
+  <div class="button_box2">
+    <form class="form-wrapper-2 cf", action="../brewpedia/search.html" method="get">
+        <input type="text" placeholder="Search here..." required>
+        <button type="submit">Search</button>
+    </form>
+    </div>
+
+</div>
+
+<!--------------------------------------------------------->
+    
+    <!-------------------------dropdown---------------------->
+        <div class="container" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+   
+        <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }
+        </script>
+   
+<!----------------------------------------------------------------->
    
 </html>

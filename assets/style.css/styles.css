@@ -31,7 +31,6 @@ h1 {
     transform: rotate(45deg) translate(-8px, -8px);
   }
 
-  /* Style the navigation bar */
 .navbar {
   width: 100%;
   background-color: #555;
@@ -48,17 +47,14 @@ h1 {
   font-size: 17px;
 }
 
-/* Navbar links on mouse-over */
 .navbar a:hover {
   background-color: #000;
 }
 
-/* Current/active navbar link */
 .active {
   background-color: blue;
 }
 
-/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;
@@ -181,14 +177,13 @@ h1 {
     background-color: #45a049;
   }
   
-  /* Style the container/contact section */
+  /* container */
   .container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 10px;
   }
   
-  /* Create two columns that float next to eachother */
   .column {
     float: left;
     width: 50%;
@@ -196,20 +191,19 @@ h1 {
     padding: 20px;
   }
   
-  /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
   
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
     .column, .con-in {
       width: 100%;
       margin-top: 0;
     }
   }
+  
 
   
  
