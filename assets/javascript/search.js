@@ -5,7 +5,7 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../javascript/connection");
 // Creates a "beer" model that matches up with DB
-var volume = sequelize.define("beer", {
+var beer = sequelize.define("beer", {
     // the routeName gets saved as a string
     routeName: Sequelize.STRING,
     // the name of the beer (a string)
@@ -24,7 +24,7 @@ var volume = sequelize.define("beer", {
     freezeTableName: true
 });
 // Syncs with DB
-volume.sync();
+beer.sync();
 
 module.exports = volume;
 
