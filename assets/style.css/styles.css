@@ -22,21 +22,6 @@ h1 {
   transition: 0.4s;
 }
 
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .bar2 {
-  opacity: 0;
-}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-}
-
-/* Style the navigation bar */
 .navbar {
   width: 100%;
   background-color: #555;
@@ -53,17 +38,14 @@ h1 {
   font-size: 17px;
 }
 
-/* Navbar links on mouse-over */
 .navbar a:hover {
   background-color: #000;
 }
 
-/* Current/active navbar link */
 .active {
   background-color: blue;
 }
 
-/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;
@@ -233,4 +215,32 @@ textarea {
     width: 100%;
     margin-top: 0;
   }
-}
+
+  /* container */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .column,
+    .con-in {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
